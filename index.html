@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>MbeyaCarwash – Car Wash, Servicing & Repairs in Mbeya</title>
+  <meta name="description" content="MbeyaCarwash is Mbeya's trusted auto service centre. We offer professional car washing, mechanical servicing, repairs, tire change, spare parts and lubricants. Located in Mwanjelwa, next to Alaf Industry." />
+  <meta name="keywords" content="carwash Mbeya, car service Mbeya, car repair Mbeya, spare parts Mbeya, lubricants Mbeya, tire change Mbeya, Mwanjelwa garage" />
+  <meta name="author" content="MbeyaCarwash" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mbeyacarwash.vercel.app/" />
+
+  <!-- Open Graph (WhatsApp / Facebook preview) -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="MbeyaCarwash – Car Wash, Servicing & Repairs in Mbeya" />
+  <meta property="og:description" content="Professional car washing, servicing, repairs, tire change, spare parts and lubricants. Mwanjelwa, Mbeya – next to Alaf Industry." />
+  <meta property="og:url" content="https://mbeyacarwash.vercel.app/" />
+  <meta property="og:locale" content="sw_TZ" />
+
+  <!-- Structured Data: LocalBusiness Schema (critical for AI + Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "MbeyaCarwash",
+    "description": "Professional car washing, servicing, mechanical repairs, tire change, spare parts and lubricants in Mbeya, Tanzania.",
+    "url": "https://mbeyacarwash.vercel.app",
+    "telephone": "+255778366666",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mwanjelwa, next to Alaf Industry",
+      "addressLocality": "Mbeya",
+      "addressCountry": "TZ"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -8.9094,
+      "longitude": 33.4607
+    },
+    "openingHours": "Mo-Sa 07:00-18:00",
+    "hasMap": "https://maps.google.com/?q=Mwanjelwa+Mbeya+Tanzania",
+    "sameAs": [
+      "https://wa.me/255778366666"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+255778366666",
+      "contactType": "customer service",
+      "availableLanguage": ["Swahili", "English"]
+    },
+    "serviceArea": {
+      "@type": "City",
+      "name": "Mbeya"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Auto Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Car Washing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Car Servicing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Car Repairs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tire Change"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spare Parts"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lubricants"}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────── */
+    :root {
+      --ink:       #0D0D0D;
+      --surface:   #F5F5F4;
+      --white:     #FFFFFF;
+      --yellow:    #F5C500;
+      --yellow-dk: #C49D00;
+      --steel:     #1C1C1E;
+      --mid:       #6B6B6B;
+      --border:    #E0E0E0;
+      --wa-green:  #25D366;
+
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Inter', sans-serif;
+
+      --radius: 6px;
+      --max: 1100px;
+    }
+
+    /* ── RESET ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── UTILITY ─────────────────────────────────────────── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section--dark { background: var(--steel); color: var(--white); }
+    .section--yellow { background: var(--yellow); color: var(--ink); }
+    .section--surface { background: var(--surface); }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .section--yellow .tag { color: var(--ink); opacity: 0.6; }
+    .section--dark .tag { color: var(--yellow); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ink);
+      border-bottom: 3px solid var(--yellow);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--ink) !important;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      font-weight: 700 !important;
+      color: var(--ink);
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--yellow-dk) !important; }
+
+    /* hide nav links on mobile */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Signature element: diagonal grease-stripe pattern */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 48px,
+        rgba(245,197,0,0.04) 48px,
+        rgba(245,197,0,0.04) 50px
+      );
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .accent { color: var(--yellow); }
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--ink);
+    }
+    .btn-primary:hover { background: var(--yellow-dk); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+    .btn-wa {
+      background: var(--wa-green);
+      color: var(--white);
+    }
+    .btn-wa:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+    .hero-badge {
+      background: rgba(245,197,0,0.12);
+      border: 1px solid rgba(245,197,0,0.3);
+      border-radius: 10px;
+      padding: 20px 24px;
+      text-align: center;
+      min-width: 140px;
+    }
+    .hero-badge-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .hero-badge-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-badge { display: none; }
+    }
+
+    /* ── SERVICES ────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 48px;
+      background: var(--border);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 36px 28px;
+      transition: background 0.2s;
+    }
+    .service-card:hover { background: var(--surface); }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .service-pill {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    /* ── WHY US ──────────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .why-item { display: flex; gap: 16px; align-items: flex-start; }
+    .why-dot {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      background: var(--yellow);
+      border-radius: 50%;
+      margin-top: 6px;
+    }
+    .why-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .why-item p { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+    /* ── CTA BAND ────────────────────────────────────────── */
+    .cta-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cta-band-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+    .cta-band-text p { margin-top: 8px; font-size: 15px; opacity: 0.75; }
+    .cta-band-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── CONTACT ─────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-items { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .contact-item-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+    .contact-item-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .contact-item-value a { color: var(--ink); }
+    .contact-item-value a:hover { color: var(--yellow-dk); }
+
+    .map-embed {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--border);
+      height: 280px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.45);
+      padding: 28px 0;
+      font-size: 13px;
+      border-top: 3px solid var(--yellow);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--yellow); }
+
+    /* ── FLOATING WA BUTTON ──────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      background: var(--wa-green);
+      color: var(--white);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+
+    /* ── SCROLL REVEAL ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────── -->
+  <nav aria-label="Main navigation">
+    <div class="container nav-inner">
+      <span class="nav-logo">Mbeya<span>Carwash</span></span>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://wa.me/255778366666" target="_blank" rel="noopener" class="nav-cta">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <p class="hero-eyebrow">Mwanjelwa, Mbeya · Est. in Mbeya</p>
+        <h1>Your Car<br>Deserves<br><span class="accent">The Best.</span></h1>
+        <p class="hero-sub">Full-service auto care in Mbeya — professional car washing, mechanical servicing &amp; repairs, tire change, spare parts, and lubricants. All under one roof.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/255778366666?text=Habari!%20Nataka%20kujua%20kuhusu%20huduma%20za%20MbeyaCarwash." target="_blank" rel="noopener" class="btn btn-wa">
+            💬 Book on WhatsApp
+          </a>
+          <a href="tel:+255778366666" class="btn btn-outline">📞 +255 778 366 666</a>
+        </div>
+      </div>
+      <div class="hero-badge" aria-hidden="true">
+        <div class="hero-badge-num">6</div>
+        <div class="hero-badge-label">Services<br>Available</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── SERVICES ──────────────────────────────────────── -->
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">What We Do</span>
+        <h2 class="section-title" id="services-title">Our Services</h2>
+      </div>
+      <div class="services-grid reveal">
+
+        <article class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3 class="service-name">Car Washing</h3>
+          <p class="service-desc">Full exterior and interior cleaning. From a quick rinse to a deep-detail wash — your vehicle leaves spotless every time.</p>
+          <span class="service-pill">Available Daily</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-name">Servicing</h3>
+          <p class="service-desc">Scheduled maintenance including oil changes, filters, fluid top-ups, and full vehicle health checks to keep you running smoothly.</p>
+          <span class="service-pill">All Vehicle Types</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🛠️</div>
+          <h3 class="service-name">Repairs</h3>
+          <p class="service-desc">Engine, suspension, brakes, electrical faults and more. Our technicians diagnose fast and fix it right the first time.</p>
+          <span class="service-pill">Expert Technicians</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3 class="service-name">Tire Change</h3>
+          <p class="service-desc">Flat tire or full rotation — quick, safe, and professional tire service while you wait. We handle all sizes.</p>
+          <span class="service-pill">Fast Turnaround</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🔩</div>
+          <h3 class="service-name">Spare Parts</h3>
+          <p class="service-desc">Quality spare parts for Japanese and other vehicle brands. Toyota Hilux, Land Cruiser, Nissan and more — sourced reliably.</p>
+          <span class="service-pill">Japanese Vehicles</span>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">🛢️</div>
+          <h3 class="service-name">Lubricants</h3>
+          <p class="service-desc">Premium engine oils and heavy-duty lubricants for passenger cars, trucks, and industrial equipment. Right grade, right price.</p>
+          <span class="service-pill">All Grades</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ─────────────────────────────────────────── -->
+  <section class="section section--dark" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Why Choose Us</span>
+        <h2 class="section-title" id="why-title">Built on Trust,<br>Driven by Quality</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h3>One-Stop Auto Centre</h3>
+            <p>Wash, service, repair, parts, and lubricants — everything your vehicle needs, at one location in Mwanjelwa.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h3>Experienced Technicians</h3>
+            <p>Our team is trained on Japanese and other popular vehicle models common in the Mbeya region.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h3>Transparent Pricing</h3>
+            <p>No surprises. We discuss what needs doing and what it costs before any work begins.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-dot"></div>
+          <div>
+            <h3>Fast Turnaround</h3>
+            <p>We respect your time. Most wash and service jobs are completed same-day so you're back on the road quickly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ───────────────────────────────────────── -->
+  <section class="section section--yellow" aria-label="Book now">
+    <div class="container reveal">
+      <div class="cta-band">
+        <div class="cta-band-text">
+          <h2>Ready to Book?<br>We're Open Now.</h2>
+          <p>Mon – Sat · 7:00 AM – 6:00 PM · Mwanjelwa, Mbeya</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://wa.me/255778366666?text=Habari!%20Nataka%20kujua%20kuhusu%20huduma%20za%20MbeyaCarwash." target="_blank" rel="noopener" class="btn btn-wa">
+            💬 WhatsApp Us
+          </a>
+          <a href="tel:+255778366666" class="btn btn-primary" style="background:var(--ink);color:var(--yellow);">
+            📞 Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────── -->
+  <section class="section section--surface" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="reveal">
+        <span class="tag">Find Us</span>
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-items">
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-item-label">Address</p>
+              <p class="contact-item-value">Mwanjelwa, Mbeya<br>Next to Alaf Industry</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <p class="contact-item-label">Call or WhatsApp</p>
+              <p class="contact-item-value">
+                <a href="tel:+255778366666">+255 778 366 666</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div>
+              <p class="contact-item-label">WhatsApp</p>
+              <p class="contact-item-value">
+                <a href="https://wa.me/255778366666?text=Habari!%20Nataka%20kujua%20kuhusu%20huduma%20za%20MbeyaCarwash." target="_blank" rel="noopener">Chat with us directly</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <p class="contact-item-label">Working Hours</p>
+              <p class="contact-item-value">Monday – Saturday<br>7:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-embed" aria-label="Map to MbeyaCarwash location">
+          <iframe
+            src="https://maps.google.com/maps?q=Mwanjelwa,Mbeya,Tanzania&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            title="MbeyaCarwash location on Google Maps"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Mbeya<span>Carwash</span></span>
+      <span>Mwanjelwa, Mbeya, Tanzania · +255 778 366 666</span>
+      <span>© 2025 MbeyaCarwash. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP ──────────────────────────────── -->
+  <a
+    href="https://wa.me/255778366666?text=Habari!%20Nataka%20kujua%20kuhusu%20huduma%20za%20MbeyaCarwash."
+    class="wa-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp"
+  >💬</a>
+
+  <!-- ── SCROLL REVEAL SCRIPT ───────────────────────────── -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
