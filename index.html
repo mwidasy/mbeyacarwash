@@ -43,7 +43,8 @@
     "openingHours": "Mo-Sa 07:00-18:00",
     "hasMap": "https://maps.google.com/?q=Mwanjelwa+Mbeya+Tanzania",
     "sameAs": [
-      "https://wa.me/255778366666"
+      "https://wa.me/255778366666",
+      "https://www.instagram.com/mbeyacarwash"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -514,7 +515,130 @@
       box-shadow: 0 6px 28px rgba(37,211,102,0.55);
     }
 
-    /* ── SCROLL REVEAL ───────────────────────────────────── */
+    /* ── SOCIAL LINKS ────────────────────────────────────── */
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 4px;
+    }
+    .nav-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: background 0.2s, border-color 0.2s;
+      color: rgba(255,255,255,0.7);
+    }
+    .nav-social a:hover {
+      background: rgba(245,197,0,0.15);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+    .nav-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+    /* ── INSTAGRAM SECTION ───────────────────────────────── */
+    .ig-section { padding: 80px 0; background: var(--ink); color: var(--white); }
+    .ig-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .ig-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .ig-handle:hover { color: var(--yellow); }
+    .ig-handle svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* The embed wrapper — SnapWidget or fallback */
+    .ig-embed-wrap {
+      width: 100%;
+      min-height: 360px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* SnapWidget iframe fills the wrap */
+    .ig-embed-wrap iframe {
+      width: 100% !important;
+      border: none !important;
+    }
+
+    /* Fallback grid shown when JS embed not available */
+    .ig-fallback {
+      display: none;
+    }
+    .ig-fallback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 3px;
+      width: 100%;
+    }
+    .ig-fallback-card {
+      aspect-ratio: 1;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.3);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .ig-fallback-card svg { width: 28px; height: 28px; fill: currentColor; opacity: 0.4; }
+
+    .ig-cta {
+      margin-top: 28px;
+      text-align: center;
+    }
+    .ig-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .ig-cta a:hover { border-color: var(--yellow); color: var(--yellow); }
+    .ig-cta svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* footer social */
+    .footer-social { display: flex; gap: 10px; align-items: center; }
+    .footer-social a {
+      display: flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.5);
+      transition: background 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { background: var(--yellow); color: var(--ink); }
+    .footer-social svg { width: 14px; height: 14px; fill: currentColor; }
+
+
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -539,7 +663,15 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#why">Why Us</a></li>
+        <li><a href="#instagram">Instagram</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <div class="nav-social">
+            <a href="https://www.instagram.com/mbeyacarwash" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </li>
         <li><a href="https://wa.me/255778366666" target="_blank" rel="noopener" class="nav-cta">WhatsApp Us</a></li>
       </ul>
     </div>
@@ -681,6 +813,51 @@
     </div>
   </section>
 
+  <!-- ── INSTAGRAM FEED ─────────────────────────────────── -->
+  <section class="ig-section reveal" id="instagram" aria-labelledby="ig-title">
+    <div class="container">
+      <div class="ig-header">
+        <div>
+          <span class="tag">Follow Our Work</span>
+          <h2 class="section-title" id="ig-title">We're on Instagram</h2>
+        </div>
+        <a href="https://www.instagram.com/mbeyacarwash" target="_blank" rel="noopener" class="ig-handle">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @mbeyacarwash
+        </a>
+      </div>
+
+      <!-- SnapWidget free Instagram embed -->
+      <div class="ig-embed-wrap">
+        <iframe
+          src="https://snapwidget.com/embed/mbeyacarwash"
+          class="snapwidget-widget"
+          allowtransparency="true"
+          frameborder="0"
+          scrolling="no"
+          style="border:none; overflow:hidden; width:100%; height:380px;"
+          title="Instagram feed for @mbeyacarwash"
+        ></iframe>
+      </div>
+
+      <!-- Fallback if embed blocked -->
+      <noscript>
+        <div class="ig-fallback" style="display:block;">
+          <p style="color:rgba(255,255,255,0.4);font-size:13px;text-align:center;padding:40px 0;">
+            Enable JavaScript to view our Instagram feed.
+          </p>
+        </div>
+      </noscript>
+
+      <div class="ig-cta">
+        <a href="https://www.instagram.com/mbeyacarwash" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          View all posts on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CONTACT ────────────────────────────────────────── -->
   <section class="section section--surface" id="contact" aria-labelledby="contact-title">
     <div class="container">
@@ -746,6 +923,11 @@
   <footer>
     <div class="container footer-inner">
       <span class="footer-logo">Mbeya<span>Carwash</span></span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/mbeyacarwash" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
       <span>Mwanjelwa, Mbeya, Tanzania · +255 778 366 666</span>
       <span>© 2025 MbeyaCarwash. All rights reserved.</span>
     </div>
